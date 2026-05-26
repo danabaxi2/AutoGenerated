@@ -2,9 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import Scene from '../components/Scene'
 
 const base = import.meta.env.BASE_URL
-
-const monoRegular = "'IBM Plex Mono', monospace"
-const monoLight = "'IBM Plex Mono', monospace"
+const mono = "'IBM Plex Mono', monospace"
 
 export default function ThePlotGenie() {
   const navigate = useNavigate()
@@ -13,14 +11,9 @@ export default function ThePlotGenie() {
     <Scene bg="#000">
 
       {/* ── Text block ─────────────────────────────────────────── */}
-      <div style={{
-        position: 'absolute',
-        left: 61,
-        top: 92,
-        width: 327,
-      }}>
+      <div style={{ position: 'absolute', left: 61, top: 92, width: 327 }}>
         <div style={{
-          fontFamily: monoRegular,
+          fontFamily: mono,
           fontSize: 40,
           fontWeight: 400,
           color: '#fff',
@@ -30,7 +23,7 @@ export default function ThePlotGenie() {
           The Plot Genie.
         </div>
         <div style={{
-          fontFamily: monoLight,
+          fontFamily: mono,
           fontSize: 13,
           fontWeight: 200,
           color: '#fff',
@@ -43,21 +36,21 @@ By relying on mathematical permutations instead of individual composition, the d
         </div>
       </div>
 
-      {/* ── Images ─────────────────────────────────────────────── */}
+      {/* ── Images — transparent PNGs, no objectFit fill ─────── */}
       <img
         src={`${base}images/genie_image23.png`}
         alt=""
-        style={{ position: 'absolute', left: 556, top: 216, width: 372, height: 459, objectFit: 'cover' }}
+        style={{ position: 'absolute', left: 556, top: 216, width: 372, height: 459, display: 'block' }}
       />
       <img
         src={`${base}images/genie_image22.png`}
         alt=""
-        style={{ position: 'absolute', left: 438, top: 272, width: 203, height: 383, objectFit: 'cover' }}
+        style={{ position: 'absolute', left: 438, top: 272, width: 203, height: 383, display: 'block' }}
       />
       <img
         src={`${base}images/genie_vector19.png`}
         alt=""
-        style={{ position: 'absolute', left: 673, top: 272, width: 249, height: 394, objectFit: 'contain' }}
+        style={{ position: 'absolute', left: 673, top: 272, width: 249, height: 394, display: 'block' }}
       />
 
       {/* ── Red start button ───────────────────────────────────── */}
@@ -78,52 +71,29 @@ By relying on mathematical permutations instead of individual composition, the d
         onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
       />
 
-      {/* ── Right sidebar bar + label ───────────────────────────── */}
+      {/* ── Right sidebar ──────────────────────────────────────── */}
       <div style={{
-        position: 'absolute',
-        left: 1372,
-        top: 248,
-        width: 38,
-        height: 330,
-        background: '#fff',
+        position: 'absolute', left: 1372, top: 248, width: 38, height: 330, background: '#fff',
       }} />
       <div style={{
-        position: 'absolute',
-        left: 1347,
-        top: 590,
-        width: 88,
-        fontFamily: 'Inter, sans-serif',
-        fontSize: 12,
-        fontWeight: 400,
-        color: '#fff',
-        lineHeight: '16px',
+        position: 'absolute', left: 1347, top: 590,
+        fontFamily: 'Inter, sans-serif', fontSize: 12, color: '#fff', lineHeight: '16px', whiteSpace: 'pre-wrap',
       }}>
-        Money{'\n'}Making $
+        {'Money\nMaking $'}
       </div>
 
       {/* ── Timeline ────────────────────────────────────────────── */}
-      {/* Horizontal line */}
       <div style={{ position: 'absolute', left: 384, top: 805, width: 672, height: 1, background: '#fff' }} />
-      {/* Ellipse at 1930 */}
       <div style={{
-        position: 'absolute',
-        left: 359,
-        top: 784,
-        width: 50,
-        height: 50,
-        borderRadius: '50%',
-        border: '1px solid #fff',
+        position: 'absolute', left: 359, top: 784, width: 50, height: 50,
+        borderRadius: '50%', border: '1px solid #fff',
       }} />
-      {/* Tick 1930 */}
       <div style={{ position: 'absolute', left: 384, top: 788, width: 1, height: 41, background: '#fff' }} />
-      {/* Tick 1962 */}
       <div style={{ position: 'absolute', left: 720, top: 788, width: 1, height: 41, background: '#fff' }} />
-      {/* Tick 2026 */}
       <div style={{ position: 'absolute', left: 1057, top: 784, width: 1, height: 41, background: '#fff' }} />
-      {/* Year labels */}
-      <div style={{ position: 'absolute', left: 369, top: 841, fontFamily: monoRegular, fontSize: 11, color: '#fff' }}>1930</div>
-      <div style={{ position: 'absolute', left: 705, top: 830, fontFamily: monoRegular, fontSize: 11, color: '#fff' }}>1962</div>
-      <div style={{ position: 'absolute', left: 1042, top: 830, fontFamily: monoRegular, fontSize: 11, color: '#fff' }}>2026</div>
+      <div style={{ position: 'absolute', left: 369, top: 841, fontFamily: mono, fontSize: 11, color: '#fff' }}>1930</div>
+      <div style={{ position: 'absolute', left: 705, top: 830, fontFamily: mono, fontSize: 11, color: '#fff' }}>1962</div>
+      <div style={{ position: 'absolute', left: 1042, top: 830, fontFamily: mono, fontSize: 11, color: '#fff' }}>2026</div>
 
     </Scene>
   )
