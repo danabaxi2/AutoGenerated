@@ -9,21 +9,11 @@ export default function ThePlotGenieInteractive() {
   return (
     <Scene bg="#000">
 
-      {/* ── Images — transparent PNGs, exact Figma dims ─────── */}
+      {/* ── Genie prototype image ──────────────────────────────── */}
       <img
-        src={`${base}images/genie_image23.png`}
+        src={`${base}images/genie_prototype.png`}
         alt=""
-        style={{ position: 'absolute', left: 556, top: 216, width: 372, height: 459, display: 'block' }}
-      />
-      <img
-        src={`${base}images/genie_image22.png`}
-        alt=""
-        style={{ position: 'absolute', left: 438, top: 272, width: 203, height: 383, display: 'block' }}
-      />
-      <img
-        src={`${base}images/genie_vector19.png`}
-        alt=""
-        style={{ position: 'absolute', left: 673, top: 272, width: 249, height: 394, display: 'block' }}
+        style={{ position: 'absolute', left: 442, top: 220, width: 490, height: 459, display: 'block' }}
       />
 
       {/* ── Red button ─────────────────────────────────────────── */}
@@ -38,9 +28,7 @@ export default function ThePlotGenieInteractive() {
       }} />
 
       {/* ── Right sidebar ──────────────────────────────────────── */}
-      <div style={{
-        position: 'absolute', left: 1372, top: 248, width: 38, height: 330, background: '#fff',
-      }} />
+      <div style={{ position: 'absolute', left: 1372, top: 248, width: 38, height: 330, background: '#fff' }} />
       <div style={{
         position: 'absolute', left: 1347, top: 590,
         fontFamily: 'Inter, sans-serif', fontSize: 12, color: '#fff', lineHeight: '16px', whiteSpace: 'pre-wrap',
@@ -68,9 +56,7 @@ export default function ThePlotGenieInteractive() {
         onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.1)'}
         onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
       >
-        <span style={{ fontFamily: "'Cutive Mono', monospace", fontSize: 14, color: '#fff' }}>
-          Next
-        </span>
+        <span style={{ fontFamily: "'Cutive Mono', monospace", fontSize: 14, color: '#fff' }}>Next</span>
       </div>
 
     </Scene>

@@ -36,21 +36,11 @@ By relying on mathematical permutations instead of individual composition, the d
         </div>
       </div>
 
-      {/* ── Images — transparent PNGs, no objectFit fill ─────── */}
+      {/* ── Genie prototype image ──────────────────────────────── */}
       <img
-        src={`${base}images/genie_image23.png`}
+        src={`${base}images/genie_prototype.png`}
         alt=""
-        style={{ position: 'absolute', left: 556, top: 216, width: 372, height: 459, display: 'block' }}
-      />
-      <img
-        src={`${base}images/genie_image22.png`}
-        alt=""
-        style={{ position: 'absolute', left: 438, top: 272, width: 203, height: 383, display: 'block' }}
-      />
-      <img
-        src={`${base}images/genie_vector19.png`}
-        alt=""
-        style={{ position: 'absolute', left: 673, top: 272, width: 249, height: 394, display: 'block' }}
+        style={{ position: 'absolute', left: 442, top: 220, width: 490, height: 459, display: 'block' }}
       />
 
       {/* ── Red start button ───────────────────────────────────── */}
@@ -72,9 +62,7 @@ By relying on mathematical permutations instead of individual composition, the d
       />
 
       {/* ── Right sidebar ──────────────────────────────────────── */}
-      <div style={{
-        position: 'absolute', left: 1372, top: 248, width: 38, height: 330, background: '#fff',
-      }} />
+      <div style={{ position: 'absolute', left: 1372, top: 248, width: 38, height: 330, background: '#fff' }} />
       <div style={{
         position: 'absolute', left: 1347, top: 590,
         fontFamily: 'Inter, sans-serif', fontSize: 12, color: '#fff', lineHeight: '16px', whiteSpace: 'pre-wrap',
