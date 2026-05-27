@@ -54,9 +54,9 @@ export default function OpeningScreen() {
           </div>
 
           <div style={{ position: 'absolute', left: 24, top: 66 }}>
-            <div style={{ fontFamily: jet, fontWeight: 500, fontSize: 67, lineHeight: '88px', color: '#000' }}>AUTOMATED</div>
-            <div style={{ fontFamily: jet, fontWeight: 500, fontSize: 67, lineHeight: '88px', color: '#000' }}>IMAGINATION</div>
-            <div style={{ fontFamily: jet, fontWeight: 700, fontStyle: 'italic', fontSize: 67, lineHeight: '88px', color: '#e35ae6' }}>
+            <div style={{ fontFamily: jet, fontWeight: 500, fontSize: 48, lineHeight: '62px', color: '#000' }}>AUTOMATED</div>
+            <div style={{ fontFamily: jet, fontWeight: 500, fontSize: 48, lineHeight: '62px', color: '#000' }}>IMAGINATION</div>
+            <div style={{ marginTop: 18, fontFamily: jet, fontWeight: 700, fontStyle: 'italic', fontSize: 48, lineHeight: '62px', color: '#e35ae6' }}>
               ARCHIVE.
             </div>
           </div>
@@ -65,7 +65,7 @@ export default function OpeningScreen() {
             style={{
               position: 'absolute',
               left: 25,
-              top: 247,
+              top: 326,
               width: 274,
               fontFamily: jet,
               fontWeight: 300,
