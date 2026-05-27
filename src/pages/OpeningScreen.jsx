@@ -13,79 +13,6 @@ const GRID = {
   backgroundSize: '39px 39px',
 }
 
-function CenterWave() {
-  const width = 1191
-  const baselineY = 422
-  const startX = 96
-  const dots = []
-  for (let x = 0; x <= width; x += 4) {
-    const t = x / width
-    const amplitude = Math.round(Math.abs(
-      Math.sin(t * Math.PI * 3.2) * 45 +
-      Math.sin(t * Math.PI * 8.7) * 20 +
-      Math.sin(t * Math.PI * 15.5) * 11
-    ))
-    for (let y = -amplitude; y <= amplitude; y += 4) {
-      dots.push({ x: startX + x, y: baselineY + y })
-    }
-  }
-  return (
-    <svg style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }} width={1440} height={900}>
-      {dots.map((dot, index) => (
-        <circle key={index} cx={dot.x} cy={dot.y} r={1.5} fill="#dbe9ff" />
-      ))}
-    </svg>
-  )
-}
-
-function RightSidebar() {
-  return (
-    <div
-      style={{
-        position: 'absolute',
-        left: 1322,
-        top: 0,
-        width: 118,
-        height: 900,
-        background: '#d9e5fb',
-        borderLeft: '1px solid #6d90f7',
-      }}
-    >
-      <div style={{ position: 'absolute', left: 30, top: 40, fontFamily: inter, fontWeight: 600, fontSize: 10, color: '#171717' }}>
-        MEANING
-      </div>
-      <div
-        style={{
-          position: 'absolute',
-          left: 45,
-          top: 70,
-          width: 0,
-          height: 0,
-          borderLeft: '13.5px solid transparent',
-          borderRight: '13.5px solid transparent',
-          borderBottom: '15px solid #050c1f',
-        }}
-      />
-      <div style={{ position: 'absolute', left: 56, top: 100, width: 5, height: 695, background: '#89a6cf' }} />
-      <div
-        style={{
-          position: 'absolute',
-          left: 45,
-          bottom: 70,
-          width: 0,
-          height: 0,
-          borderLeft: '13.5px solid transparent',
-          borderRight: '13.5px solid transparent',
-          borderTop: '15px solid #050c1f',
-        }}
-      />
-      <div style={{ position: 'absolute', left: 39, bottom: 40, fontFamily: inter, fontWeight: 600, fontSize: 10, color: '#171717' }}>
-        MONEY
-      </div>
-    </div>
-  )
-}
-
 export default function OpeningScreen() {
   const navigate = useNavigate()
   const [leaving, setLeaving] = useState(false)
@@ -102,48 +29,92 @@ export default function OpeningScreen() {
           position: 'absolute',
           left: 0,
           top: 0,
-          width: 1322,
+          width: 1440,
           height: 900,
           background: '#0126ca',
           ...GRID,
           overflow: 'hidden',
         }}
       >
-        <div style={{ position: 'absolute', left: 20, top: 25, color: '#fff', zIndex: 4 }}>
-          <div style={{ fontFamily: jet, fontWeight: 700, fontSize: 34, lineHeight: '38px' }}>AUTOMATED</div>
-          <div style={{ fontFamily: jet, fontWeight: 700, fontSize: 34, lineHeight: '38px' }}>IMAGINATION</div>
-          <div style={{ fontFamily: jet, fontWeight: 700, fontStyle: 'italic', fontSize: 34, lineHeight: '38px', color: '#8ab2ff' }}>
-            ARCHIVE.
-          </div>
-        </div>
-
-        <div style={{ position: 'absolute', left: 96, top: 421, width: 1191, height: 2, background: '#ffffff', zIndex: 3 }} />
-        <CenterWave />
-
-        <button
-          type="button"
-          onClick={enter}
+        <div
           style={{
             position: 'absolute',
-            left: 565,
-            top: 598,
-            width: 192,
-            height: 30,
-            border: '1px solid #ffffff',
-            background: 'transparent',
-            color: '#ffffff',
-            cursor: 'pointer',
-            fontFamily: jet,
-            fontWeight: 500,
-            fontSize: 12,
-            letterSpacing: '0.08em',
-            zIndex: 6,
+            left: 369,
+            top: 202,
+            width: 702,
+            height: 496,
+            background: '#c7d2e6',
+            boxShadow: '0 6px 18px rgba(0,0,0,0.35)',
+            opacity: leaving ? 0 : 1,
+            transition: 'opacity 220ms ease',
           }}
         >
-          ENTER THE ARCHIVE
-        </button>
+          <div style={{ position: 'absolute', left: 23, top: 25, fontFamily: inter, fontSize: 31, fontWeight: 400, color: '#0126ca' }}>
+            WELCOME TO:
+          </div>
+
+          <div style={{ position: 'absolute', left: 24, top: 66 }}>
+            <div style={{ fontFamily: jet, fontWeight: 500, fontSize: 67, lineHeight: '88px', color: '#000' }}>AUTOMATED</div>
+            <div style={{ fontFamily: jet, fontWeight: 500, fontSize: 67, lineHeight: '88px', color: '#000' }}>IMAGINATION</div>
+            <div style={{ fontFamily: jet, fontWeight: 700, fontStyle: 'italic', fontSize: 67, lineHeight: '88px', color: '#e35ae6' }}>
+              ARCHIVE.
+            </div>
+          </div>
+
+          <div
+            style={{
+              position: 'absolute',
+              left: 25,
+              top: 247,
+              width: 274,
+              fontFamily: jet,
+              fontWeight: 300,
+              fontSize: 10,
+              lineHeight: '16px',
+              color: '#171717',
+            }}
+          >
+            An Interactive Archive of machines, patents, and system built to automate stories, poetry, images and attention.
+          </div>
+
+          <button
+            type="button"
+            onClick={enter}
+            style={{
+              position: 'absolute',
+              left: 255,
+              top: 411,
+              width: 192,
+              height: 30,
+              border: '1px solid #1f4da0',
+              background: 'transparent',
+              fontFamily: jet,
+              fontWeight: 400,
+              fontSize: 12,
+              color: '#214ca2',
+              letterSpacing: '0.06em',
+              cursor: 'pointer',
+            }}
+          >
+            ENTER THE ARCHIVE
+          </button>
+
+          <div
+            style={{
+              position: 'absolute',
+              left: 200,
+              top: 464,
+              fontFamily: jet,
+              fontWeight: 300,
+              fontSize: 8,
+              color: '#214ca2',
+              letterSpacing: '0.02em',
+            }}
+          >
+            DRAG THE TIMELINE / SELECT AN ARTIFACT / GENERATE OUTPUT
+          </div>
+        </div>
       </div>
-      <RightSidebar />
       <div
         style={{
           position: 'absolute',
